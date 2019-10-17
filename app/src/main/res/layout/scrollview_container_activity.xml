@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical">
+
+    <include layout="@layout/head" />
+
+    <com.dengjinwen.basetool.library.view.ScrollViewContainer
+        android:id="@+id/content_svc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/scrollview_container_one" />
+        <include layout="@layout/scrollview_container_two" />
+    </com.dengjinwen.basetool.library.view.ScrollViewContainer>
+</LinearLayout>
