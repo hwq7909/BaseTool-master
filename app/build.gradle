@@ -41,5 +41,4 @@ dependencies {
 
     implementation "android.arch.lifecycle:extensions:1.1.1"
 
-    implementation 'com.github.hwq7909:BaseTool-master:Tag'
 }
