@@ -83,9 +83,12 @@ public class LocalDataUitlTool {
                 int id=cursor.getInt(cursor.getColumnIndex(MediaStore.Video.Media._ID));
                 Cursor thumbCursor=mContext.getContentResolver().query(MediaStore.Video.Thumbnails.EXTERNAL_CONTENT_URI,
                         thumbColumns,MediaStore.Video.Thumbnails.VIDEO_ID+"="+id,null,null);
-                if(thumbCursor.moveToFirst()){
-                    info.setThumb(thumbCursor.getString(thumbCursor.getColumnIndex(MediaStore.Video.Thumbnails.DATA)));
+                if(thumbCursor!=null){
+                    if(thumbCursor.moveToFirst()){
+                        info.setThumb(thumbCursor.getString(thumbCursor.getColumnIndex(MediaStore.Video.Thumbnails.DATA)));
+                    }
                 }
+                thumbCursor.close();
                 info.setPath(cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA)));
                 info.setDuration(cursor.getInt(cursor.getColumnIndex(MediaStore.Video.Media.DURATION)));
                 sysVideoList.add(info);
@@ -110,6 +113,7 @@ public class LocalDataUitlTool {
             }while (cursor.moveToNext());
         }
         mFileCache.clear();
+        cursor.close();
         Collections.sort(mImageFloders,new ImageFolderComparator());
         addAllImageFolder(mContext.getResources().getString(R.string.all_video));
         mImageFloders.get(0).setCount(sysVideoList.size());
