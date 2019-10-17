@@ -1,15 +1,15 @@
-*Step 1. Add the JitPack repository to your build file
->Add it in your root build.gradle at the end of repositories:
->	allprojects {
->		repositories {
->			...
->			maven { url 'https://jitpack.io' }
->		}
->	}
-*Step 2. Add the dependency
->	dependencies {
->	        implementation 'com.github.hwq7909:BaseTool-master:-SNAPSHOT'
->	}
+ * Step 1. Add the JitPack repository to your build file
+    >Add it in your root build.gradle at the end of repositories:
+    >	allprojects {
+    >		repositories {
+    >			...
+    >			maven { url 'https://jitpack.io' }
+    >		}
+    >	}
+ * Step 2. Add the dependency
+    >	dependencies {
+    >	        implementation 'com.github.hwq7909:BaseTool-master:-SNAPSHOT'
+    >	}
  ## 模块功能
   [BottomNavigationBar 底部导航栏](https://github.com/lizhibei/BaseTool/wiki/BottomNavigationBar) &ensp;  &ensp;
   [BannerLayout 轮播图](https://github.com/lizhibei/BaseTool/wiki/BannerLayout) &ensp;  &ensp;
