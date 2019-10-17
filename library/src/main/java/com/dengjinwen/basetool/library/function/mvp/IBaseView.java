@@ -19,7 +19,7 @@ public interface IBaseView {
      *
      * @param msg
      */
-//    void showToast(String msg);
+    void showToast(String msg);
 
     /**
      * 显示请求错误提示
