@@ -22,11 +22,11 @@ public class SelectImageAdapter extends BaseAdapter {
     private Context mContext;
     private List<IBaseItemEntity> data;
     private LayoutInflater inflater;
-    private HashSet<IBaseItemEntity> selectImages;
+    private ArrayList<IBaseItemEntity> selectImages;
     public  OnAdapterProcessListener listener;
 
     public SelectImageAdapter(Context mContext, List<IBaseItemEntity> data,
-                              HashSet<IBaseItemEntity> selectImages) {
+                              ArrayList<IBaseItemEntity> selectImages) {
         this.mContext = mContext;
         this.data = data;
         this.selectImages=selectImages;
