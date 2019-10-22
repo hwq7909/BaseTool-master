@@ -83,7 +83,7 @@ public class SelectImageActivity extends AppCompatActivity implements View.OnCli
     /**
      * 已选择的
      */
-    private HashSet<IBaseItemEntity> selectItem=new HashSet<>();
+    private ArrayList<IBaseItemEntity> selectItem=new ArrayList<>();
 
     private SelectImageAdapter adapter;
     private List<IBaseItemEntity> data=new ArrayList<>();
