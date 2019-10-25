@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.dengjinwen.basetool.library.R;
 
 import java.util.List;
@@ -56,9 +57,10 @@ public class SelectFileAdapter extends BaseAdapter {
             holder= (ViewHolder) convertView.getTag();
         }
         Floder imageFloder=data.get(position);
+        RequestOptions options = new RequestOptions().error(R.drawable.image);
         Glide.with(mContext)
                 .load(imageFloder.getFirstImagePath())
-                .error(R.drawable.image)
+                .apply(options)
                 .into(holder.image_iv);
         holder.name_tv.setText(imageFloder.getName());
         String end;

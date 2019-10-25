@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.RequestOptions;
 import com.dengjinwen.basetool.R;
 import com.dengjinwen.basetool.activity.BaseActivity;
 import com.dengjinwen.basetool.library.function.banner.BannerLayout;
@@ -79,14 +81,12 @@ public class BannerLayoutActivity extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onBannerShow(String url, ImageView imgView) {
+        RequestOptions options = new RequestOptions().centerCrop().priority(Priority.HIGH)
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE).error(R.mipmap.image).placeholder(R.mipmap.image);
         Glide.with(this)
                 .load(url)
-                .centerCrop()
-                .priority(Priority.HIGH)
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-                .placeholder(R.mipmap.image)
-                .error(R.mipmap.image)
-                .crossFade()
+                .apply(options)
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imgView);
     }
 

@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.dengjinwen.basetool.R;
 import com.dengjinwen.basetool.library.tool.ScreenUitl;
 
@@ -78,10 +79,10 @@ public class SelectImageAndAdapter extends BaseAdapter {
         holder.image_iv.getLayoutParams().width= ScreenUitl.getScreenWidth(mContext)/3;
         holder.image_iv.getLayoutParams().height=ScreenUitl.getScreenWidth(mContext)/3;
         File file=new File(data.get(position));
+        RequestOptions options = new RequestOptions().error(R.mipmap.image).placeholder(R.mipmap.image);
         Glide.with(mContext)
                 .load(file)
-                .error(R.mipmap.image)
-                .placeholder(R.mipmap.image)
+                .apply(options)
                 .into(holder.image_iv);
         holder.select_iv.setVisibility(View.GONE);
         return convertView;
