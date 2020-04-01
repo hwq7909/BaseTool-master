@@ -74,7 +74,7 @@ public class AndSelectImage {
     }
 
     public AndSelectImage withSupporFragment(android.support.v4.app.Fragment fragment){
-        if(activity!=null||fragment!=null){
+        if(activity!=null||this.fragment!=null){
             throw new RuntimeException("You must pass either Activity, Fragment or SupportFragment");
         }
         supporFragment=fragment;
